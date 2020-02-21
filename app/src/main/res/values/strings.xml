@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ToDo app</string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="give_another_try">Give it another try</string>
+    <string name="reload">RELOAD</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.nagarro.todoapp.ui.mainlist.MainListViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/layout_dummy_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:viewmodel="@{viewmodel}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_todo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:itemBinding="@{viewmodel.accessoryBinding}"
+            app:items="@{viewmodel.listOfTodo}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_item_todo_list"
+            app:isVisible="@{!viewmodel.showErrorView}"/>
+
+        <include
+            layout="@layout/layout_no_network"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:viewmodel="@{viewmodel}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
