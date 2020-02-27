@@ -12,14 +12,14 @@ import kotlinx.coroutines.*
 import me.tatarka.bindingcollectionadapter2.ItemBinding
 import kotlin.coroutines.CoroutineContext
 
-class MainListViewModel(private val dataRepository: IDataRepository) : ViewModel(),
-    CoroutineScope {
+class MainListViewModel(private val dataRepository: IDataRepository) : ViewModel(){
     private val job = Job()
     val listOfTodo = ObservableArrayList<ListItem>()
     val showShimmerView = ObservableBoolean(true)
     val showErrorView = ObservableBoolean(false)
 
-    override val coroutineContext: CoroutineContext = Dispatchers.Main + job
+    //override val coroutineContext: CoroutineContext = Dispatchers.Main + job
+    // Q: What is withContext, Scope?, suspend/resume?
     fun getTodoList() {
         CoroutineScope(Dispatchers.Main).launch {
             val result = withContext(Dispatchers.IO) { dataRepository.getTodoList() }
@@ -34,6 +34,8 @@ class MainListViewModel(private val dataRepository: IDataRepository) : ViewModel
                     showErrorView.set(true)
             }
         }
+        //Q: async and usage for coroutine?
+        // Q: println("")
     }
 
     fun reloadList() {

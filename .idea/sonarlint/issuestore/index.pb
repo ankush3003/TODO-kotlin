@@ -37,3 +37,11 @@ c
 3app/src/main/java/com/nagarro/todoapp/KoinModule.kt,2\6\268a06ac03211180965cecf14702a39fae3a1119
 h
 8app/src/main/java/com/nagarro/todoapp/BaseApplication.kt,4\a\4acb77d76e20c0029848ea610b6acf6a15998578
+k
+;app/src/test/java/com/nagarro/todoapp/utils/MockResponse.kt,4\a\4af533a2095b80dfe9014ff9d9d6d796d69175d2
+n
+>app/src/test/java/com/nagarro/todoapp/MainListViewModelTest.kt,b\2\b2e58c614519696fa6786af654dd3ec9f4c13c40
+n
+>app/src/main/java/com/nagarro/todoapp/utils/BindingAdapters.kt,4\b\4b22de8e523fbacf25ff0a23a0f18b4658a4b92c
+9
+	Readme.md,0\c\0c1945d7443c2e154bd3e421c0d438bd4086d8c3

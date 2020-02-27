@@ -11,6 +11,7 @@ class NetworkInterceptor(private val mContext: Context) : Interceptor {
             val connectivityManager =
                 mContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val netInfo = connectivityManager.activeNetworkInfo
+            // Q: This is deferred, callbacks or different methods
             return netInfo != null && netInfo.isConnected
         }
 

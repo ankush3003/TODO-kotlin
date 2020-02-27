@@ -5,13 +5,15 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.facebook.shimmer.ShimmerFrameLayout
 
+//Q:
+// Why object, can be compiled without object,
+// Why jvmstatic, how to access these methods from activity
 object BindingAdapters {
-
     @JvmStatic
     @BindingAdapter("app:task_completion_text")
     fun setProgressBarVisibility(textView: TextView, isCompleted: Boolean?) {
         isCompleted?.let {
-            val status = "Completed: " + isCompleted
+            val status = "Completed: $isCompleted"
             textView.text = status
         } ?: run { textView.visibility = View.GONE }
     }
@@ -22,7 +24,6 @@ object BindingAdapters {
         view.visibility = if (isVisible != null && isVisible) View.VISIBLE else View.GONE
     }
 
-    @JvmStatic
     @BindingAdapter("app:showShimmerView")
     fun showHide(view: ShimmerFrameLayout, isVisible: Boolean) {
         if (isVisible) {
